@@ -47,7 +47,7 @@ estudado**. A simulação demonstra o método. Os números não são ajustes par
 pelo Google, clique em *Executar mesmo assim*. Em cerca de um minuto aparecem os números e
 as figuras.
 
-**No computador**, com Python 3.10 ou mais recente:
+**No computador**, com Python 3.12 ou mais recente:
 
 ```
 pip install -r requirements.txt
@@ -61,7 +61,7 @@ com Python 3.13, NumPy 2.5 e Matplotlib 3.11.
 
 | Arquivo | Conteúdo |
 | --- | --- |
-| `simulacao_prova_de_conceito.py` | Simulação completa, a mesma do Apêndice C do TCC |
+| `simulacao_prova_de_conceito.py` | Simulação completa; implementa o procedimento descrito no Apêndice C do TCC |
 | `prova_de_conceito.ipynb` | Notebook para rodar no Google Colab |
 | `saida_referencia/` | Saídas esperadas, para conferência |
 | `docs/malha_simulada.png` | Diagrama de blocos da malha (Figura 2 do TCC) |

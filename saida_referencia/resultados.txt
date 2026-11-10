@@ -1,0 +1,40 @@
+== Comparacao das sintonias, r = 2 (Tabela 14 do TCC) ==
+padrao = regra-padrao de Fossen (eq. 20 de Swider et al.); tabela1 = regra da Tabela 1 de Swider et al. (2023)
+ganhos padrao: Kp=0.095238 Ki=0.00031746 Kd=4.285714 Tf=45.0
+ganhos tabela1: Kp=0.190476 Ki=0.00158730 Kd=5.714286 Tf=60.0
+iae        padrao=  889.114  tabela1=  722.116
+assent     padrao=  123.800  tabela1=  142.250
+sobre      padrao=    0.344  tabela1=    0.000
+desvio     padrao=    1.341  tabela1=    0.611
+recup      padrao=   51.200  tabela1=    0.000
+atividade  padrao=    2.256  tabela1=    2.312
+(assentamento contado a partir da mudanca de referencia, t = 30 s)
+variacao IAE = -18.8%
+variacao desvio = -54.4%
+variacao atividade = 2.5%
+acrescimo assentamento = 18.45 s
+
+== Varredura de r na regra da Tabela 1 de Swider et al. (Tabela 15 e Figura 13 do TCC) ==
+r     IAE      atividade  desvio  sobressinal  pico_ordem
+1.00   1543.7     0.82    1.62    0.000       0.24
+1.25   1214.8     1.10    1.20    0.000       0.37
+1.50    994.1     1.43    0.93    0.000       0.54
+1.75    837.8     1.84    0.74    0.000       0.73
+2.00    722.1     2.31    0.61    0.000       0.95
+2.25    633.4     2.85    0.51    0.000       1.21
+2.50    563.4     3.46    0.44    0.000       1.49
+2.75    506.9     4.14    0.38    0.000       1.80
+3.00    460.3     4.88    0.33    0.000       2.14
+3.25    421.4     5.70    0.29    0.000       2.51
+3.50    388.4     6.58    0.26    0.000       2.92
+3.75    360.1     7.52    0.23    0.000       3.35
+4.00    335.5     8.54    0.21    0.000       3.81
+lambda=0.5: r*=2.15  IAE=666.3  atividade=2.63  J=1.491
+lambda=1.0: r*=1.75  IAE=837.8  atividade=1.84  J=1.955
+lambda=2.0: r*=1.40  IAE=1072.8  atividade=1.29  J=2.602
+
+== Degradacao do atuador, regra da Tabela 1 de Swider et al., r = 2 (Tabela 16 e Figura 14 do TCC) ==
+cenario            IAE     desvio  t50[s]  t_div>0,2[s]  atividade
+nominal             722.8   0.62     1.2       2.0       2.19
+degradado           724.0   0.63     4.1       7.9       2.42
+muito degradado     726.9   0.67    10.8      35.6       3.04

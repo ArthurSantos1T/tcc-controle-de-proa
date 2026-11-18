@@ -4,7 +4,7 @@ Prova de conceito do controle de proa - TCC CApA-Of 2026 (versao final)
 
 Reproduz a simulacao da secao 5.9 (Apendice C) e gera os resultados da
 secao 5.9.3:
-  (a) otimizacao da razao de projeto r da regra de sintonia de
+  (a) escolha da razao de projeto r da regra de sintonia de
       Swider, Trybus e Stec (2023, Tabela 1);
   (b) sensibilidade a degradacao do atuador (limite de taxa e atraso).
 
@@ -231,7 +231,7 @@ def main():
     fig.savefig(FIG / "fig10_ordem_perturbacao.png")
     plt.close(fig)
 
-    # ---------------- 5.9.3 (a): otimizacao da razao de projeto ----------
+    # ---------------- 5.9.3 (a): escolha da razao de projeto -------------
     grade_r = np.round(np.arange(1.0, 4.0001, 0.05), 2)
     res = []
     for r in grade_r:
@@ -247,11 +247,11 @@ def main():
         if abs(row[0] * 4 - round(row[0] * 4)) < 1e-9:      # passos de 0,25
             linhas.append(f"{row[0]:4.2f}  {row[1]:7.1f}  {row[2]:7.2f}   {row[3]:5.2f}   "
                           f"{row[4]:6.3f}      {row[5]:5.2f}")
-    otimos = {}
+    escolhidos = {}
     for lam in (0.5, 1.0, 2.0):
         J = res[:, 1] / iae2 + lam * res[:, 2] / at2
         j = int(np.argmin(J))
-        otimos[lam] = res[j]
+        escolhidos[lam] = res[j]
         linhas.append(f"lambda={lam:3.1f}: r*={res[j, 0]:.2f}  IAE={res[j, 1]:.1f}  "
                       f"atividade={res[j, 2]:.2f}  J={J[j]:.3f}")
 
@@ -263,10 +263,10 @@ def main():
         ax.annotate(f"r = {str(rr).replace('.', ',')}", (res[j, 2], res[j, 1]),
                     textcoords="offset points", xytext=(7, 4), fontsize=8.5, color=TINTA2)
     marcadores = {0.5: "s", 1.0: "D", 2.0: "^"}
-    for lam, row in otimos.items():
+    for lam, row in escolhidos.items():
         ax.plot(row[2], row[1], marcadores[lam], ms=9, mfc="white", mec=LARANJA,
                 mew=1.8, zorder=4,
-                label=f"ótimo para λ = {str(lam).replace('.', ',')} "
+                label=f"menor J para λ = {str(lam).replace('.', ',')} "
                       f"(r = {row[0]:.2f})".replace(".", ","))
     ax.plot(m_p["atividade"], m_p["iae"], "X", ms=8, color=TINTA2, zorder=4,
             label="sintonia-padrão (Fossen)")

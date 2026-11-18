@@ -1,8 +1,7 @@
 # Prova de conceito do controle de proa (TCC C-ApA-Of 2026)
 
 Código da simulação usada na prova de conceito do trabalho de conclusão de curso
-**"Otimização da automação do sistema de governo de um navio-patrulha: diagnóstico e
-programa de recuperação e modernização"**, de Arthur dos Santos Sousa, Primeiro-Tenente,
+**"Recuperação e modernização da automação do sistema de governo de um navio-patrulha: diagnóstico e programa em fases"**, de Arthur dos Santos Sousa, Primeiro-Tenente,
 apresentado ao Curso de Aperfeiçoamento Avançado para Oficiais (C-ApA-Of) 2026, no CIAA.
 
 [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ArthurSantos1T/tcc-controle-de-proa/blob/main/prova_de_conceito.ipynb)
